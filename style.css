@@ -1,0 +1,315 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap");
+
+:root {
+	--main-color: hsl(40, 95%, 70%);
+
+	--font-color-emphasis-low: hsla(0, 0%, 15%, 0.6);
+	--font-color-emphasis-med: hsl(0, 0%, 15%, 0.8);
+	--font-color-emphasis-high: hsl(0, 0%, 15%);
+
+	--font-color-inverted-high: hsl(240, 100%, 99%);
+
+	--background-color-1: hsl(0, 0%, 15%);
+	--background-color-2: hsl(0, 0%, 25%);
+	--background-color-3: hsl(0, 0%, 35%);
+	--background-color-4: hsl(0, 0%, 65%);
+	--background-color-5: hsl(0, 0%, 95%);
+}
+
+* {
+	box-sizing: border-box;
+
+	padding: 0;
+	margin: 0;
+}
+
+body,
+html {
+	width: 100%;
+	min-height: 100vh;
+
+	font-family: "Roboto", monospace;
+	color: var(--font-color-emphasis-high);
+	background-color: var(--background-color-5);
+}
+
+/*  */
+
+.header {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+
+	width: 100%;
+	height: 4rem;
+
+	padding: 1rem 4rem;
+
+	background-color: var(--main-color);
+}
+
+.header__visual {
+	display: flex;
+	align-items: center;
+
+	gap: 1rem;
+}
+
+.header__title {
+	font-size: 1rem;
+}
+
+.header__nav {
+}
+
+.header__nav-list {
+	display: flex;
+	align-items: center;
+	gap: 1rem;
+
+	list-style: none;
+}
+
+.header__link {
+	font-size: 1rem;
+	font-weight: 500;
+	text-decoration: none;
+	color: inherit;
+}
+
+.header__link:hover {
+	filter: brightness(1.25) contrast(80%);
+	transition: all 0.2s ease;
+}
+
+.header__link.cta {
+	padding: 0.4rem 0.8rem;
+	border-radius: 0.2rem;
+
+	font-weight: 400;
+
+	background-color: var(--background-color-1);
+	color: var(--font-color-inverted-high);
+}
+
+/* Hero */
+
+.hero {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+
+	width: 100%;
+	min-height: 50vh;
+
+	padding: 4rem 10%;
+
+	background-color: hsl(240, 80%, 99%);
+}
+
+/*  */
+
+.hero__info {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+
+	width: 45%;
+}
+
+.hero__title {
+	font-size: 3rem;
+	line-height: 1.25;
+}
+
+.hero__overview {
+	line-height: 1.25;
+	color: var(--font-color-emphasis-med);
+}
+
+/*  */
+
+.hero__search-box {
+	display: flex;
+	align-items: center;
+
+	width: 70%;
+	height: 2.5rem;
+
+	overflow: hidden;
+	border-radius: 0.3rem;
+	border: 1px solid var(--background-color-1);
+	margin-top: 2rem;
+
+	transition: all 0.2s ease;
+}
+
+/* Esta clase se aplica a .searchBox cuando se hace focus en #searchInput */
+.outlined {
+	border: 1px solid var(--main-color);
+	outline: 4px solid hsla(40, 95%, 70%, 0.3);
+
+	transition: all 0.2s ease;
+}
+
+#searchInput {
+	width: 100%;
+	height: 100%;
+
+	padding: 0 1rem;
+
+	border: none;
+}
+
+#searchBtn {
+	height: 100%;
+
+	padding: 0 1rem;
+
+	border: none;
+
+	font-size: 16px;
+
+	color: #fff;
+	background-color: var(--background-color-1);
+
+	cursor: pointer;
+}
+
+#searchBtn.disabled {
+	filter: contrast(50%);
+	cursor: not-allowed;
+}
+
+#searchBtn:hover {
+	filter: brightness(1.25) contrast(80%);
+	transition: all 0.2s ease;
+}
+
+#searchBtn.disabled:hover {
+	filter: brightness(1) contrast(50%);
+}
+
+#error {
+	transform: translatey(-0.8rem);
+	margin-top: 0.5rem;
+	opacity: 0%;
+
+	color: rgb(169, 29, 57);
+
+	transition: all 0.2s ease;
+}
+
+#error.error {
+	transform: translatey(0rem);
+	opacity: 100%;
+
+	transition: all 0.2s ease;
+}
+
+/*  */
+
+.hero__visual {
+	max-width: 40%;
+	height: auto;
+}
+
+.hero__img {
+	width: 100%;
+	height: auto;
+}
+
+/* [x] Estilizar el input text */
+
+/*  */
+
+.movie-container {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 1rem;
+
+	height: 100%;
+
+	padding: 4rem;
+
+	background-color: var(--background-color-5);
+}
+
+.movie {
+	display: flex;
+
+	width: 100%;
+	max-height: 256px;
+
+	padding: 0.5rem;
+	border-radius: 0.4rem;
+
+	background-color: ghostwhite;
+}
+
+.movie__poster {
+	width: 10rem;
+	max-height: 240px;
+
+	border-radius: 0.2rem;
+}
+
+.movie__info {
+	display: flex;
+	flex-direction: column;
+	gap: 0.2rem;
+
+	overflow-x: auto;
+
+	padding: 0.4rem 0.8rem;
+}
+.movie__title {
+	font-size: 1.4rem;
+}
+
+.movie__date {
+	margin-bottom: 1rem;
+	font-size: 0.9rem;
+	color: var(--font-color-emphasis-low);
+	font-weight: 400;
+}
+
+.movie__overview {
+	color: var(--font-color-emphasis-high);
+}
+
+@media (max-width: 1080px) {
+	.hero__info {
+		gap: 0.4rem;
+	}
+
+	.hero__title {
+		font-size: 2.4rem;
+		line-height: 1.2;
+	}
+
+	.hero__search-box {
+		width: 90%;
+		height: 2.4rem;
+	}
+
+	.movie-container {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+
+	.movie {
+		width: 80%;
+
+		padding: 0.5rem;
+		border-radius: 0.4rem;
+
+		background-color: ghostwhite;
+	}
+
+	.movie__poster {
+		width: 10rem;
+		height: 240px;
+	}
+}

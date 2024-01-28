@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Info Movie Seven</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header class="header">
+
+        <div class="header__visual">
+
+            <img width="40px" src="https://cdn-icons-png.flaticon.com/512/6364/6364045.png " alt="Logo">
+            <h1 class="header__title">Info Movie Seven</h1>
+
+        </div>
+        <nav class="header__nav">
+
+            <ul class="header__nav-list">
+
+                <li><a class="header__link" href="#about">About</a></li>
+                <li><a class="header__link cta" href="#hero">Search</a></li>
+
+            </ul>
+
+        </nav>
+
+    </header>
+
+    <section id="hero" class="hero">
+
+        <div class="hero__info">
+
+            <h2 class="hero__title">The information you need about movies and series</h2>
+            <p class="hero__overview">Explore your favorite movies and series with Info Movie Seven. All the details you
+                need in one place!</p>
+
+            <div class="hero__search-box">
+
+                <input type="text" id="searchInput" placeholder="Ingrese el título de la película" />
+                <button id="searchBtn">Buscar</button>
+
+            </div>
+            <p id="error">Ingresa el nombre de la peĺicula</p>
+
+        </div>
+        <div class="hero__visual">
+
+            <img class="hero__img" src="https://cdn-icons-png.flaticon.com/512/3879/3879976.png" alt="Hero Image">
+
+        </div>
+
+    </section>
+
+    <section id="results" class="movie-container">
+
+        <div class="movie">
+
+            <img src="https://media.themoviedb.org/t/p/w220_and_h330_face/jPGbcbMlzGUECukPhkEMVt1Kvs5.jpg" alt=""
+                class="movie__poster">
+
+            <div class="movie__info">
+                <h4 class="movie__title">Cazadores En Tierra Inhóspita</h4>
+                <p class="movie__date">25 ene 2008</p>
+
+                <p class="movie__overview">Después de un terremoto que convierte Seúl en una tierra inhóspita y sin ley,
+                    un cazador entra en acción para rescatar a una chica en manos de un médico trastornado. Secuela del
+                    film de 2023 “Concrete Utopia”</p>
+            </div>
+
+        </div>
+        <div class="movie">
+
+            <img src="https://media.themoviedb.org/t/p/w220_and_h330_face/jPGbcbMlzGUECukPhkEMVt1Kvs5.jpg" alt=""
+                class="movie__poster">
+
+            <div class="movie__info">
+                <h4 class="movie__title">Cazadores En Tierra Inhóspita</h4>
+                <p class="movie__date">25 ene 2008</p>
+
+                <p class="movie__overview">Después de un terremoto que convierte Seúl en una tierra inhóspita y sin ley,
+                    un cazador entra en acción para rescatar a una chica en manos de un médico trastornado. Secuela del
+                    film de 2023 “Concrete Utopia”</p>
+            </div>
+
+        </div>
+
+
+    </section>
+
+    <script>
+        const searchContainer = document.querySelector(".hero__search-box");
+        const searchInput = document.querySelector("#searchInput");
+        // Aplicar valores css especiales
+        searchInput.addEventListener("focus", () => {
+            searchContainer.classList.add("outlined");
+        });
+
+        searchInput.addEventListener("blur", () => {
+            searchContainer.classList.remove("outlined");
+        });
+
+    </script>
+
+    <script type="module" src="./domManipulation.js"></script>
+
+</body>
+
+</html>
